@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">CiQMobile</string>
+    <string name="desc">Image will take time to load</string>
+    <string name="txtusername">User Name(ID)</string>
+    <string name="txtpassword">Password</string>
+    <string name="txtforgotpassword">Forgot Password</string>
+    <string name="btnlogin">LOGIN</string>
+    <string name="eventname">"com.crawford.ciq.dev.dev.splash"</string>
+    <string name="outline">outline</string>
+    <string name="filled">filled</string>
+    <string name="down">down</string>
+    <string name="up">up</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="all"><u>All</u></string>
+    <string name="location">Location</string>
+    <string name="date">Date</string>
+    <string name="please_wait">Please wait for a while.....</string>
+    <string name="no_data_available">Sorry no Record found</string>
+    <string name="nodockets">Dockets Not available</string>
+    <string name="more">More</string>
+    <string name="com_auth0_client_id">vwdchqbrt14ryg2YtElVL0ftGWNP3r7c</string>
+    <!--    <string name="com_auth0_client_id">0N1S0f3G18jcLbQDSYblp2TVxTyL2NQc</string>-->
+    <string name="com_auth0_domain">auth-dev.crawco.com</string>
+    <!--    <string name="com_auth0_domaidin">agni0103.us.auth0.com</string>-->
+    <string name="network_id">Adjuster ID e.g.AAAAA</string>
+    <string name="emailaddress">Kshitiz.Agnihotri@us.crawco.com</string>
+    <string name="password">P@$$w0rd</string>
+    <string name="connectname">Username-Password-Authentication</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="updating">updating...</string>
+    <string name="na">- -</string>
+    <string name="email">EMAIL</string>
+    <string name="phone">OFFICE</string>
+    <string name="cell">CELL</string>
+    <string name="colon">: </string>
+    <string name="dollar">$ </string>
+    <string name="hint">Please type docket...</string>
+    <string name="google_places_api_key">AIzaSyBoBZ6l1GENnyZSJTRraIVMziu2QuEzbRc</string>
+</resources>

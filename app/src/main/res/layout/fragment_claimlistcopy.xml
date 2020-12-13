@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/commonLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            >
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:visibility="gone"
+                app:srcCompat="@drawable/draft"
+                app:tint="@color/colorbg" />
+
+            <ImageView
+                android:id="@+id/iv_alert"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:tag="@string/outline"
+                app:srcCompat="@drawable/alert_outline"
+                app:tint="@color/colorbg" />
+
+            <ImageView
+                android:id="@+id/iv_assist"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:tag="@string/outline"
+                app:srcCompat="@drawable/assist_outline"
+                app:tint="@color/colorbg" />
+
+            <ImageView
+                android:id="@+id/iv_flash"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:tag="@string/outline"
+                app:srcCompat="@drawable/flash_outline"
+                app:tint="@color/colorbg" />
+
+            <ImageView
+                android:id="@+id/iv_date"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:tag="@string/outline"
+                app:srcCompat="@drawable/calender1"
+                app:tint="@color/colorbg" />
+
+            <ImageView
+                android:id="@+id/iv_distance"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:tag="@string/outline"
+                app:srcCompat="@drawable/location1"
+                app:tint="@color/colorbg" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/colorAccent"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="FC"
+                android:textColor="@color/colorbg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="FV"
+                android:textColor="@color/colorbg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="FR"
+                android:textColor="@color/colorbg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="ER"
+                android:textColor="@color/colorbg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="Reset"
+                android:textColor="@color/colorbg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_claimlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/please_wait"
+        android:visibility="visible" />
+</LinearLayout>

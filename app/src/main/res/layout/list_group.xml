@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colordocketincomplete"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="30dp"
+        android:background="@drawable/drawable_circle"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="30dp">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/profile" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/listTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+       android:paddingLeft="5dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="left"
+        android:text="Claimant"
+        android:textColor="@color/colorbg" />
+</LinearLayout>

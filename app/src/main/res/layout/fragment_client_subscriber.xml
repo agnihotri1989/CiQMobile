@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="claimsubscription"
+            type="com.crawford.ciq.dev.model.ClaimSubscription" />
+
+        <variable
+            name="myclaim"
+            type="com.crawford.ciq.dev.model.MyClaimResult" />
+
+        <variable
+            name="claimdetailviewmodel"
+            type="com.crawford.ciq.dev.ui.claimdetail.ClaimDetailViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <!-- TODO: Update blank fragment layout -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Claim Subscription"
+                android:textColor="@color/colorbg"
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="NAME"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/tv_clientsubscriber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{claimsubscription.examinersName==null? @string/updating:claimsubscription.examinersName}"
+                            android:textColor="@android:color/black"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:onClick="@{(view) -> claimsubscription.sendEmail(view, claimsubscription.examinersEmailAddress)}"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:text="EMAIL"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/tv_emailaddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{claimsubscription.examinersEmailAddress==null? @string/updating:claimsubscription.examinersEmailAddress}"
+                            android:textColor="@color/color_phonebg"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_clientinfoaddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:onClick="@{(view) -> claimsubscription.onNavigatetoGoogleMaps(view,  claimsubscription.address1,claimsubscription.address2,claimsubscription.city,claimsubscription.province,claimsubscription.country,claimsubscription.postalCode)}"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="ADDRESS"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{claimsubscription.city.empty? @string/na:claimsubscription.getAddressformat(claimsubscription.address1,claimsubscription.address2,claimsubscription.city,claimsubscription.province,claimsubscription.country,claimsubscription.postalCode)}"
+                            android:textColor="@color/color_phonebg"
+                            android:textSize="15dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PHONE"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/tv_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="@{(view) -> claimsubscription.onPhoneClick(view, claimsubscription.examinersPhone)}"
+                            android:text="@{claimsubscription.examinersPhone.empty? @string/updating:claimsubscription.retrivephonenumebrformat(claimsubscription.examinersPhone)}"
+                            android:textColor="@color/color_phonebg"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PERCENTAGE"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/tv_percentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{claimsubscription.percentage==0? @string/updating:Integer.toString(claimsubscription.percentage)}"
+                            android:textColor="@android:color/black"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LEAD"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:id="@+id/tv_clientlead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{myclaim.assist?@string/yes:@string/no}"
+                            android:textColor="@android:color/black"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

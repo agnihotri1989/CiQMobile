@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorbg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/iv_navigate_back"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_backbutton"
+                    android:visibility="visible"
+                    android:layout_weight="0.10"
+                    app:tint="@android:color/white" />
+
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0.80"
+                    android:background="@drawable/edit_bg"
+                    android:focusableInTouchMode="true">
+
+                    <ImageView
+                        android:id="@+id/iv_search"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/ic_search_category_default"
+                        app:tint="@android:color/white" />
+
+                    <EditText
+                        android:id="@+id/edit_query"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/iv_search"
+                        android:background="@android:color/transparent"
+                        android:drawableTint="@android:color/white"
+                        android:hint="Search"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="@android:color/white"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+
+
+
+
+
+                <ImageView
+                    android:id="@+id/iv_home"
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_weight="0.10"
+                    android:visibility="visible"
+                    android:src="@drawable/ic_close"
+                    app:tint="@android:color/white" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/home_bg"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <LinearLayout
+                android:id="@+id/ll_datedistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:visibility="gone"
+                android:background="@color/colorbg">
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="1dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@android:color/white"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left|center_vertical"
+                        android:text="Date"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorbg" />
+
+                    <ImageView
+                        android:id="@+id/iv_datearrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_toRightOf="@id/tv_date"
+                        android:gravity="left"
+                        android:padding="1dp"
+                        android:src="@drawable/down_arrow"
+                        android:tag="@string/down"
+                        app:tint="@color/colorbg" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@android:color/white"></View>
+
+                <RelativeLayout
+                    android:id="@+id/rl_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginRight="1dp"
+                    android:layout_marginBottom="1dp"
+                    android:background="@android:color/white"
+                    android:padding="5dp">
+
+
+                    <TextView
+                        android:id="@+id/tv_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:gravity="left|center_vertical"
+                        android:text="Dist"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorbg"
+                        android:visibility="visible" />
+
+                    <ImageView
+                        android:id="@+id/iv_distancearrow"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_toRightOf="@id/tv_distance"
+                        android:gravity="left"
+                        android:padding="1dp"
+                        android:src="@drawable/up_arrow"
+                        android:tag="@string/down"
+                        android:visibility="invisible"
+                        app:tint="@color/colorbg" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </FrameLayout>
+        <!--        <FrameLayout-->
+        <!--            android:id="@+id/container"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_marginLeft="5dp"-->
+        <!--            android:layout_marginRight="5dp"-->
+        <!--            android:layout_marginBottom="?actionBarSize"-->
+        <!--            android:background="@drawable/home_bg"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent" />-->
+    </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        android:visibility="gone"
+        app:itemBackground="@drawable/item_bg"
+        app:itemIconTint="@drawable/navbar_color"
+        app:itemTextColor="@drawable/navbar_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+</androidx.constraintlayout.widget.ConstraintLayout>

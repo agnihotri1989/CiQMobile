@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="myclaim"
+            type="com.crawford.ciq.dev.model.MyClaimResult" />
+
+        <variable
+            name="claimant"
+            type="com.crawford.ciq.dev.model.ClaimantApiResult" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CLAIMANT"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_climanatname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{claimant.getfullname()}"
+
+                    android:textColor="@android:color/black"
+
+                    android:textSize="15dp" />
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/tv_climanatname"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:text="@{claimant.claimantlastname.empty? @string/updating:claimant.claimantfirstname}"-->
+
+                <!--                        android:textColor="@android:color/black"-->
+
+                <!--                        android:textSize="15dp" />-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="EMAIL"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_emailclaimant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{claimant.contacts.size()==0?@string/na:claimant.contacts.get(0).claimantcontactType.equals(@string/email)?claimant.contacts.get(0).claimantcontactType+claimant.contacts.get(0).contactDetails:@string/na}"
+
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:onClick="@{(view) -> claimant.onNavigatetoGoogleMaps(view, claimant.address)}"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ADDRESS"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_addressclaimant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{claimant.city==null?@string/na:claimant.getAddressformat(claimant.address1,claimant.address2,claimant.city,claimant.province,claimant.country,claimant.postalCode)}"
+                    android:textColor="@color/color_phonebg"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PHONE"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_work"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{claimant.contacts.size()==0?@string/na:claimant.contacts.get(0).claimantcontactType.equals(@string/phone)? @string/na:claimant.contacts.get(0).claimantcontactType+@string/colon+claimant.retrivephonenumebrformat(claimant.contacts.get(0).contactDetails)}"
+                    android:textColor="@color/color_phonebg"
+                    android:visibility="gone"
+                    android:onClick="@{(view) -> claimant.onPhoneClick(view, claimant.contacts.get(0).contactDetails)}"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_cell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{claimant.contacts.size()==0?@string/na:claimant.contacts.get(0).claimantcontactType.equals(@string/cell)? @string/na:claimant.contacts.get(0).claimantcontactType+@string/colon+claimant.retrivephonenumebrformat(claimant.contacts.get(0).contactDetails)}"
+                    android:textColor="@color/color_phonebg"
+                    android:onClick="@{(view) -> claimant.onPhoneClick(view, claimant.contacts.get(0).contactDetails)}"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="INJURY/LOSS TYPE"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tv_injurytype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{claimant.injuryDamage==null? @string/updating:claimant.injuryDamage}"
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

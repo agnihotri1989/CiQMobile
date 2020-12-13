@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_myclaims"
+        android:icon="@drawable/claims"
+        android:title="My Claims" />
+    <item
+        android:id="@+id/navigation_recent"
+        android:icon="@drawable/task"
+        android:title="Recents" />
+    <item
+        android:id="@+id/navigation_drafts"
+        android:icon="@drawable/claims"
+        android:title="Draft" />
+    <item
+        android:id="@+id/navigation_reports"
+        android:icon="@drawable/reminder"
+        android:title="Reports" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_threedots"-->
+<!--        android:icon="@drawable/threedots"-->
+<!--        android:title="@string/more"-->
+<!--       />-->
+</menu>

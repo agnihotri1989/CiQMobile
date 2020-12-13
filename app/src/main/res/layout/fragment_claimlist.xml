@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/commonLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:showDividers="middle"
+            android:divider="?android:attr/dividerVertical"
+            android:layout_marginBottom="5dp">
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:visibility="gone"
+                app:srcCompat="@drawable/draft"
+                app:tint="@color/colorbg" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:showDividers="middle"
+                android:divider="?android:attr/dividerVertical"
+                android:layout_weight="0.48">
+
+                <ImageView
+                    android:id="@+id/iv_alert"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.16"
+                    android:contentDescription="@string/desc"
+                    android:tag="@string/outline"
+                    app:srcCompat="@drawable/alert_outline" />
+
+                <ImageView
+                    android:id="@+id/iv_assist"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.16"
+                    android:contentDescription="@string/desc"
+                    android:tag="@string/outline"
+                    app:srcCompat="@drawable/assist_outline"
+                    app:tint="@color/colorbg" />
+
+                <ImageView
+                    android:id="@+id/iv_flash"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_25dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.16"
+                    android:contentDescription="@string/desc"
+                    android:tag="@string/outline"
+                    app:srcCompat="@drawable/flash_outline"
+                    app:tint="@color/colorbg" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_date"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:tag="@string/outline"
+                android:visibility="gone"
+                app:srcCompat="@drawable/calender1"
+                app:tint="@color/colorbg" />
+
+            <ImageView
+                android:id="@+id/iv_distance"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:tag="@string/outline"
+                android:visibility="gone"
+                app:srcCompat="@drawable/location1"
+                app:tint="@color/colorbg" />
+
+            <RadioGroup
+                android:id="@+id/fancy_radio_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.80"
+                android:orientation="horizontal"
+                android:showDividers="middle">
+
+                <RadioButton
+                    android:id="@+id/rad_fc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/radio_flat_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="FC"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorbg" />
+
+
+                <RadioButton
+                    android:id="@+id/rad_fv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/radio_flat_selector"
+                    android:button="@android:color/transparent"
+
+                    android:gravity="center"
+                    android:text="FV"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorbg" />
+
+
+                <RadioButton
+                    android:id="@+id/rad_fr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/radio_flat_selector"
+                    android:button="@android:color/transparent"
+
+                    android:gravity="center"
+                    android:text="FR"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorbg" />
+
+
+                <RadioButton
+                    android:id="@+id/rad_er"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.20"
+                    android:background="@drawable/radio_flat_selector"
+                    android:button="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="ER"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorbg" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_fc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.20"
+                android:gravity="center|top"
+                android:text="FC"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorbg"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_fv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.20"
+                android:gravity="center|top"
+                android:text="FV"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorbg"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_fr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.20"
+                android:gravity="center|top"
+                android:text="FR"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorbg"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_er"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.20"
+                android:gravity="center|top"
+                android:text="ER"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorbg"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_width="0dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.16"
+                android:contentDescription="@string/desc"
+                android:interpolator="@android:anim/linear_interpolator"
+                android:tag="@string/outline"
+                app:srcCompat="@drawable/refresh"
+                app:tint="@color/colorbg" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/colorAccent"
+            android:visibility="gone"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="FC"
+                android:textColor="@color/colorbg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="FV"
+                android:textColor="@color/colorbg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="FR"
+                android:textColor="@color/colorbg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="ER"
+                android:textColor="@color/colorbg" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_25dp"
+                android:layout_weight="0.20"
+                android:gravity="center"
+                android:text="Reset"
+                android:textColor="@color/colorbg" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_claimlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/please_wait"
+        android:visibility="visible" />
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="15dp"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:background="@drawable/bg_docketincompletelast"
+        android:gravity="center"
+        android:layout_height="20dp">
+
+        <TextView
+            android:id="@+id/tv_docketincompletelast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FR"
+            android:textColor="@android:color/black"
+            android:textSize="8sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+
+
+
+
+
+</FrameLayout>

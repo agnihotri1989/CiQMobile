@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colordocketincomplete">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_claimantname"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="left"
+            android:padding="5dp"
+            android:text="Khemraj"
+            android:drawableLeft="@drawable/ic_claimant"
+            android:drawableRight="@drawable/right_chevron"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorbg"
+            android:background="@color/colordocketincomplete"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/ll_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <ListView
+                android:id="@+id/lv_claimantinfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content">-->
+
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/colorbg">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/ivdialog_call"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_centerVertical="true"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:src="@drawable/ic_baseline_call_24"></ImageView>-->
+
+    <!--        <View-->
+    <!--            android:layout_width="1dp"-->
+    <!--            android:layout_height="60dp"-->
+    <!--            android:layout_toRightOf="@+id/ivdialog_call"-->
+    <!--            android:background="@android:color/white"></View>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/lldialog_claimant"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_toRightOf="@+id/ivdialog_call"-->
+    <!--            android:orientation="vertical">-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tv_claimantname"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="left"-->
+    <!--                android:padding="5dp"-->
+    <!--                android:text="John"-->
+    <!--                android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+    <!--                android:textColor="@android:color/white" />-->
+
+    <!--            <View-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="1dp"-->
+    <!--                android:background="@android:color/white"></View>-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/tv_claimantnumber"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:gravity="left"-->
+    <!--                android:padding="5dp"-->
+    <!--                android:text="123456"-->
+    <!--                android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+    <!--                android:textColor="@android:color/white" />-->
+
+    <!--        </LinearLayout>-->
+    <!--        <View-->
+    <!--            android:layout_below="@+id/lldialog_claimant"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="5dp"-->
+    <!--            android:background="@android:color/white"></View>-->
+
+    <!--    </RelativeLayout>-->
+
+
+    <!--</RelativeLayout>-->

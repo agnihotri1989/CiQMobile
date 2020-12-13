@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:background="@null"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rl_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:background="@color/coloreditbg">
+
+        <ImageView
+            android:id="@+id/tv1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:src="@drawable/ic_baseline_call_24"
+            android:text="Header" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_emptytext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_call"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/white"
+        android:visibility="visible">
+
+        <ListView
+            android:id="@+id/dialog_lv_claim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:visibility="gone" />
+        <ExpandableListView
+            android:id="@+id/expandableListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="0.5dp">
+
+        </ExpandableListView>
+
+        <TextView
+            android:id="@+id/dialog_empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/please_wait"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <View
+        android:layout_below="@+id/rl_emptytext"
+        android:id="@+id/view_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@android:color/transparent"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/view_transparent"
+        android:backgroundTint="@android:color/white"
+        android:gravity="center"
+        android:text="Cancel"
+        android:textColor="@android:color/holo_red_dark" />
+
+
+</RelativeLayout>

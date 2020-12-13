@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View"/>
+        <variable
+            name="claimsubscription"
+            type="com.crawford.ciq.dev.model.ClaimSubscription" />
+        <variable
+            name="myclaim"
+            type="com.crawford.ciq.dev.model.MyClaimResult" />
+        <variable
+            name="claim"
+            type="com.crawford.ciq.dev.model.ClaimResult" />
+        <variable
+            name="insuredaddress"
+            type="com.crawford.ciq.dev.model.InsuredAddressApiResult" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:divider="?android:attr/dividerHorizontal"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Insured"
+            android:textColor="@color/colorbg"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="INSURED"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_insuredfullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{claim.insuredName+claim.insuredFirstName}"
+                        android:textColor="@android:color/black"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:onClick="@{(view) -> insuredaddress.sendEmail(view, insuredaddress.email)}"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EMAIL"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_emailaddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{insuredaddress.email==null | insuredaddress.email.empty? @string/na:insuredaddress.email}"
+                        android:textColor="@color/color_phonebg"
+                        android:textSize="15dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:onClick="@{(view) -> insuredaddress.onNavigatetoGoogleMaps(view, insuredaddress.address1,insuredaddress.address2,insuredaddress.address3,insuredaddress.city,insuredaddress.province,insuredaddress.country,insuredaddress.postalCode)}"
+                    android:padding="5dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ADDRESS"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_addressinsured"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{insuredaddress.getAddressformat(insuredaddress.address1,insuredaddress.address2,insuredaddress.address3,insuredaddress.city,insuredaddress.province,insuredaddress.country,insuredaddress.postalCode)}"
+                        android:textColor="@color/color_phonebg"
+                        android:textSize="15dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PHONE"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/tv_businessphone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{insuredaddress.businessPhone.empty?View.GONE:View.VISIBLE}"
+                        android:text="@{insuredaddress.retrivephonenumebrformat(insuredaddress.businessPhone)}"
+                        android:textColor="@color/color_phonebg"
+                        android:onClick="@{(view) -> insuredaddress.onPhoneClick(view, insuredaddress.businessPhone)}"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/tv_homephone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{insuredaddress.homePhone.empty?View.GONE:View.VISIBLE}"
+                        android:text="@{insuredaddress.retrivephonenumebrformat(insuredaddress.homePhone)}"
+                        android:textColor="@color/color_phonebg"
+                        android:onClick="@{(view) -> insuredaddress.onPhoneClick(view, insuredaddress.homePhone)}"
+                        android:textSize="15dp" />
+                    <TextView
+                        android:id="@+id/tv_mobilephone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="@{insuredaddress.mobilePhone.empty?View.GONE:View.VISIBLE}"
+                        android:text="@{insuredaddress.retrivephonenumebrformat(insuredaddress.mobilePhone)}"
+                        android:textColor="@color/color_phonebg"
+                        android:onClick="@{(view) -> insuredaddress.onPhoneClick(view, insuredaddress.mobilePhone)}"
+                        android:textSize="15dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

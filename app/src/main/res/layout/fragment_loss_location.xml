@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="myclaim"
+            type="com.crawford.ciq.dev.model.MyClaimResult" />
+        <variable
+            name="insuredaddress"
+            type="com.crawford.ciq.dev.model.InsuredAddressApiResult" />
+        <variable
+            name="claim"
+            type="com.crawford.ciq.dev.model.ClaimResult" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:divider="?android:attr/dividerHorizontal"
+        android:orientation="vertical"
+        android:showDividers="middle">
+
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Loss Location"
+            android:textColor="@color/colorbg"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{(view) -> claim.onNavigatetoGoogleMaps(view, claim.address1,claim.address2,claim.city,claim.province,claim.country,claim.postalCode)}"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LOSS LOCATION"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_losslocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{claim.getAddressformat(claim.address1,claim.address2,claim.city,claim.province,claim.country,claim.postalCode)}"
+                    android:textColor="@color/color_phonebg"
+                    android:textSize="15dp" />
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <FrameLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <fragment
+                android:id="@+id/myMap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.google.android.gms.maps.SupportMapFragment"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_direction"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:text="Direction"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/coloreditbox"
+                    app:rippleColor="#33AAAAAA"
+                    app:cornerRadius="20sp"
+                    app:strokeColor="@color/colorunselctedtab" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_streetview"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="5dp"
+                    android:text="StreetView"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    app:cornerRadius="20sp"
+                    app:backgroundTint="@color/coloreditbox"
+                    app:rippleColor="#33AAAAAA"
+                    app:strokeColor="@color/colorunselctedtab" />
+            </LinearLayout>
+        </FrameLayout>
+
+
+    </LinearLayout>
+</layout>

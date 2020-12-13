@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:background="@drawable/bg_docketdased"
+        android:layout_height="20dp">
+        <TextView
+            android:id="@+id/tv_docketprogress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FC"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="8sp" />
+    </RelativeLayout>
+
+
+
+
+
+
+</FrameLayout>

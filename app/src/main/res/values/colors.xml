@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#193362</color>
+    <color name="colorPrimaryDark">#193362</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorbtn">#0071B9</color>
+    <color name="coloreditbg">#4F8DF0</color>
+    <color name="colorheaderbg">#204486</color>
+    <color name="colorgrayscale">#9AD8CC</color>
+
+<!--    MyClaims-->
+    <color name="colorbg">#204486</color>
+    <color name="coloreditbox">#4f8df0</color>
+    <color name="colorheader">#f1f4f8</color>
+    <color name="colorunselctedtab">#436fbf</color>
+<!--    MyClaimlistiems-->
+    <color name="colorkeys">#204486</color>
+    <color name="colorvalue">#555555</color>
+    <color name="colordocketincomplete">#e4e6e9</color>
+    <color name="colordocketfilled">#2f60b4</color>
+    <color name="coloralert">#D46717</color>
+
+<!--    bottomnavigation-->
+    <color name="item_nonselected">#436fbf</color>
+    <color name="item_selected">#204486</color>
+    <color name="redcolor">#D10C32</color>
+    <!--    my claim details-->
+
+    <color name="color_tabhighlighted">#DF195C</color>
+    <color name="color_unselected">#939393</color>
+    <color name="color_activitystatus">#686868</color>
+
+    <color name="color_messagebg">#7FB1FF</color>
+    <color name="color_phonebg">#508EF0</color>
+    <color name="color_locationbg">#224587</color>
+    <color name="color_docketdialog">#FCFCFA</color>
+    <color name="color_docketviewscreen">#F5F9FB</color>
+    <color name="color_edittextdisabled">#FAFAF4</color>
+
+
+    <color name="color_activity_completed">#39988A</color>
+    <color name="color_activity_draft">#606060</color>
+    <color name="color_cardview">#F5F5F5</color>
+</resources>
